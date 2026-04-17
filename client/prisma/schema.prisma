@@ -1,0 +1,89 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Company {
+  id           String        @id @default(uuid())
+  name         String
+  sector       String
+  businessAge  Int
+  turnover     Float
+  status       String        @default("Active")
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  files        CompanyFile[]
+  scores       CompanyScore[]
+  reports      CompanyReport[]
+  alerts       Alert[]
+}
+
+enum FileType {
+  BANK_STATEMENT
+  BALANCE_SHEET
+  GST_ROC
+  CREDIT_BUREAU
+}
+
+enum FileStatus {
+  UPLOADED
+  PROCESSING
+  PROCESSED
+  FAILED
+}
+
+model CompanyFile {
+  id        String     @id @default(uuid())
+  companyId String
+  company   Company    @relation(fields: [companyId], references: [id])
+  fileType  FileType
+  fileUrl   String
+  status    FileStatus @default(UPLOADED)
+  metadata  Json?      // Stores parsed data like inflows, outflows, ratios
+  createdAt DateTime   @default(now())
+}
+
+enum RiskBucket {
+  LOW
+  MEDIUM
+  HIGH
+  VERY_HIGH
+}
+
+model CompanyScore {
+  id                  String     @id @default(uuid())
+  companyId           String
+  company             Company    @relation(fields: [companyId], references: [id])
+  riskScore           Int        // 0-1000
+  riskBucket          RiskBucket
+  cashFlowStress      Boolean    @default(false)
+  paymentDelays       Boolean    @default(false)
+  unusualTransactions Boolean    @default(false)
+  computedAt          DateTime   @default(now())
+}
+
+model CompanyReport {
+  id        String   @id @default(uuid())
+  companyId String
+  company   Company  @relation(fields: [companyId], references: [id])
+  markdown  String
+  createdAt DateTime @default(now())
+}
+
+model Alert {
+  id          String   @id @default(uuid())
+  companyId   String
+  company     Company  @relation(fields: [companyId], references: [id])
+  type        String
+  severity    String   // Info, Warning, Critical
+  description String
+  createdAt   DateTime @default(now())
+  resolved    Boolean  @default(false)
+}
