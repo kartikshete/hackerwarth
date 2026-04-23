@@ -131,8 +131,10 @@ npm run dev
 **Aether Credit Intelligence** is the result of relentless optimization, late-night debugging, and an uncompromising vision to bring deterministic AI to the FinTech ecosystem. 
 
 ### 🧠 The Team
-*   **Kartik Shete** – *Lead Architect & Full-Stack Developer* | Engineered the multi-agent swarm architecture, deterministic risk engine, and seamless Edge deployment.
-*   **Team Aether** – *Research & Strategy* | Focused on data parsing compliance, heuristic math models, and underwriting logic.
+*   **Kartik Shete** – *Lead Architect & Systems Engineer* | Orchestrated the decentralized multi-agent swarm and deterministic risk engine.
+*   **Purva Lad** – *UI/UX Strategy & Frontend Architecture* | Crafted the high-fidelity glassmorphism interface and interactive visualizers.
+*   **Chanaksha Patil** – *Backend Security & Data Integrity* | Implemented Prisma persistence layers and edge-level API sanitization.
+*   **Sunil Kumbhar** – *Performance Optimization & XAI Logic* | Refined the Explainable AI reporting engine and mathematical underwriting heuristics.
 
 *Built to redefine corporate credit logic. Designed for the real world.*
  
