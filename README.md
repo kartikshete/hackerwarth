@@ -135,6 +135,7 @@ npm run dev
 *   **Purva Lad** – *UI/UX Strategy & Frontend Architecture* | Crafted the high-fidelity glassmorphism interface and interactive visualizers.
 *   **Chanaksha Patil** – *Backend Security & Data Integrity* | Implemented Prisma persistence layers and edge-level API sanitization.
 *   **Sunil Kumbhar** – *Performance Optimization & XAI Logic* | Refined the Explainable AI reporting engine and mathematical underwriting heuristics.
+*   **Pratik Lakde** – *Data Science & Prompt Engineering* | Optimized the cognitive parsing layer and heuristic weighting models.
 
 *Built to redefine corporate credit logic. Designed for the real world.*
  
