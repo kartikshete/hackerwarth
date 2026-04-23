@@ -138,4 +138,4 @@ npm run dev
 *   **Pratik Lakde** – *Data Science & Prompt Engineering* | Optimized the cognitive parsing layer and heuristic weighting models.
 
 *Built to redefine corporate credit logic. Designed for the real world.*
- 
+ // Collaborative optimization
